@@ -35,7 +35,6 @@ for data in raw_students:
 student_name = "Ayesha Sharma"
 subjects     = ["Math", "Physics", "CS", "English", "Chemistry"]
 marks        = [88, 72, 95, 60, 78]
-
 # Grade validation
 def get_grade(mark):
     if 90 <= mark <= 100:
@@ -52,30 +51,23 @@ def get_grade(mark):
 print("=" * 40)
 print("Student :", student_name)
 print("=" * 40)
-
 #subject with grade
 for i in range(len(subjects)):
     print(f"{subjects[i]} : {marks[i]} -> Grade {get_grade(marks[i])}")
-
-#calculation of average,min and max
+# calculation of average,min and max
 total = sum(marks)
 avg = round(total / len(marks), 2)
-
 highest_mark = max(marks)
 lowest_mark = min(marks)
-
 highest_subject = subjects[marks.index(highest_mark)]
 lowest_subject = subjects[marks.index(lowest_mark)]
-
 print("Total   :", total)
 print("Average :", avg)
 print(f"Highest : {highest_subject} ({highest_mark})")
 print(f"Lowest  : {lowest_subject} ({lowest_mark})")
-
 # While loop
 new_subjects = []
 new_marks = []
-
 while True:
     subject = input("\nEnter subject name (or 'done' to stop): ").strip()
     
@@ -83,7 +75,6 @@ while True:
         break
 
     mark_input = input(f"Enter marks for {subject} 0 to 100): ").strip()
-
 # checking type of  input for marks
     if not mark_input.isdigit():
         print("Invalid input! Marks must be numeric.")
@@ -95,13 +86,10 @@ while True:
     if mark < 0 or mark > 100:
         print("Invalid input! Marks must be between 0 and 100.")
         continue
-
     new_subjects.append(subject)
     new_marks.append(mark)
-
 # result/final_output
 total_of_new_subjects = len(new_marks)
-
 all_marks = marks + new_marks
 updated_avg = round(sum(all_marks) / len(all_marks), 2)
 
@@ -118,17 +106,13 @@ class_data = [
     ("Karan Mehta",    [40, 55, 38, 62, 50]),
     ("Sneha Pillai",   [75, 80, 70, 68, 85]),
 ]
-
 print("Name              | Average | Status")
 print("-" * 40)
-
 passed_count = 0
 failed_count = 0
 total_avg_sum = 0
-
 topper_name = ""
 topper_avg = 0
-
 for name, marks in class_data:
     avg = round(sum(marks) / len(marks), 2)
     status = "Pass" if avg >= 60 else "Fail"
@@ -165,28 +149,22 @@ essay = "  python is a versatile language. it supports object oriented, function
 
 # Strip spaces
 essay_new = essay.strip()
-
 print("Essay New:")
 print(essay_new)
-
 #Title Case
 print("\nTitle Case:")
 print(essay_new.title())
-
 # Count word python
 count_python = essay_new.count("python")
 print("\nCount of 'python':", count_python)
-
 # Replace word  python with Python symbol
 essay_replaced = essay_new.replace("python", "Python 🐍")
 print("\nReplaced Essay:")
 print(essay_replaced)
-
 # Splitting sentence into list
 sentences = essay_new.split(". ")
 print("\nSentences List:")
 print(sentences)
-
 # Numbering sentences   
 print("Numbered Sentences:")
 for i, sentence in enumerate(sentences, start=1):
